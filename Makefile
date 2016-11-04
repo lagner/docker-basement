@@ -5,7 +5,7 @@ IMG_TAG = latest
 IMG = $(IMG_HOST)/$(IMG_NAME):$(IMG_TAG)
 
 
-.PHONY: build run clear
+.PHONY: build run clear push pull
 
 
 build:
@@ -16,3 +16,9 @@ run:
 
 clear:
 	docker rmi $(shell docker images $(IMG) -q)
+
+push:
+	docker push $(IMG)
+
+pull:
+	docker pull $(IMG)
