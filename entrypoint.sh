@@ -4,4 +4,4 @@
 
 cd $workdir
 
-/bin/bash $@
+/bin/bash -c "$@"

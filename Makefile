@@ -12,7 +12,7 @@ build:
 	docker build --rm -t $(IMG) .
 
 run:
-	docker run -ti --rm -h $(IMG_HOST) $(IMG) entrypoint
+	docker run -ti --rm -h $(IMG_HOST) $(IMG)
 
 clear:
 	docker rmi $(shell docker images $(IMG) -q)

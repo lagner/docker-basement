@@ -1,0 +1,15 @@
+[color]
+	ui = true
+	grep = true
+	status = true
+	diff = true
+[log]
+	decorate = full
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short 
+[credential]
+	helper = cache --timeout=28800

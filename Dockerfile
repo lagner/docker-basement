@@ -3,7 +3,10 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get install -y \
-        cowsay
+    cowsay\
+    vim\
+    mc\
+    git
 
 ENV worker batman
 ENV workdir /basement
@@ -11,9 +14,13 @@ ENV workdir /basement
 RUN useradd -s /bin/bash -d ${workdir} ${worker}
 RUN usermod -a -G sudo,games ${worker}
 
+COPY entrypoint.sh /usr/local/bin/basement-entrypoint
+
 USER ${worker}
-WORKDIR ${workdir}
 
-COPY entrypoint.sh /usr/local/bin/entrypoint
+COPY gitconfig  ${workdir}/.gitconfig
+COPY vimrc  ${workdir}/.vimrc
+COPY vim    ${workdir}/.vim
 
-CMD ["entrypoint"]
+ENTRYPOINT ["basement-entrypoint"]
+CMD ["/bin/bash"]
