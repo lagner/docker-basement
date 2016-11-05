@@ -1,6 +1,6 @@
 
 IMG_HOST = lagner
-IMG_NAME = basement
+IMG_NAME = docker-basement
 IMG_TAG = latest
 IMG = $(IMG_HOST)/$(IMG_NAME):$(IMG_TAG)
 
