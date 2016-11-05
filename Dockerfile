@@ -3,10 +3,9 @@ FROM ubuntu:16.04
 RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get install -y \
-    cowsay\
-    vim\
-    mc\
-    git
+    cowsay vim mc git silversearcher-ag
+
+RUN echo 'root:toor' | chpasswd
 
 ENV worker batman
 ENV workdir /basement
