@@ -24,6 +24,7 @@ set_prompt () {
 }
 
 PROMPT_COMMAND='set_prompt'
+alias mc="mc -S nicedark"
 EOF
 
 cd $workdir
