@@ -2,6 +2,7 @@
 
 /usr/games/cowsay -f beavis.zen "I'm BATMAN!"
 
+cat /etc/skel/.bashrc >> $HOME/.bashrc
 cat << EOF >> $HOME/.bashrc
 
 set_prompt () {
