@@ -8,8 +8,11 @@ RUN echo 'root:toor' | chpasswd
 ENV worker batman
 ENV workdir /basement
 
+WORKDIR ${workdir}
+
 RUN useradd -s /bin/bash -d ${workdir} ${worker}
 RUN usermod -a -G sudo,users,plugdev ${worker}
+RUN chown -R ${worker}:${worker} ${workdir}
 
 COPY entrypoint.sh /usr/local/bin/basement-entrypoint
 
